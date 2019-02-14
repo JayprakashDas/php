@@ -1,0 +1,4 @@
+.pager li .active_link{
+
+	background: hsl(0, 0%, 15%) !important;
+}
