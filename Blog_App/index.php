@@ -4,6 +4,9 @@
 <?php include 'includes/navigation.php' ?>
 
 
+    <!-- /////// WORK DONE\\\\\\\\\\\\
+    /////////////WORK DONE/////////////
+    \\\\\\\\\\\\\\WORK DONE\\\\\\\\\\\ -->
 
 
 
@@ -34,9 +37,9 @@
                 $find_post_count = mysqli_query($connection,$post_query_count);
                 $count=mysqli_num_rows($find_post_count);
                 $count = ceil($count/2);
-                 $limit = $page_1+2;
-                
-                $query = "SELECT * FROM posts $page_1,2 ";
+
+
+                $query = "SELECT * FROM posts LIMIT $page_1,2 ";
                 $select_all_post= mysqli_query($connection,$query);
                 while($row = mysqli_fetch_assoc($select_all_post)){
                     $post_id  = $row['post_id'];
@@ -49,7 +52,7 @@
                     $post_status=$row['post_status'];
                     //POST DISPLAY LOGIC GOES HERE
                     if($post_status!=='published'){
-//                         echo "no post to display";
+                        echo "no post to display";
                     }
                     else{
 
