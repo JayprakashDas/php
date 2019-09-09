@@ -36,7 +36,7 @@
                 $count = ceil($count/2);
                  $limit = $page_1+2;
                 
-                $query = "SELECT * FROM posts ";
+                $query = "SELECT * FROM posts $page_1,2 ";
                 $select_all_post= mysqli_query($connection,$query);
                 while($row = mysqli_fetch_assoc($select_all_post)){
                     $post_id  = $row['post_id'];
@@ -49,7 +49,7 @@
                     $post_status=$row['post_status'];
                     //POST DISPLAY LOGIC GOES HERE
                     if($post_status!=='published'){
-                        echo "no post to display";
+//                         echo "no post to display";
                     }
                     else{
 
