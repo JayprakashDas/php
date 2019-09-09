@@ -36,7 +36,7 @@
                 $count = ceil($count/2);
                  $limit = $page_1+2;
                 
-                $query = "SELECT * FROM posts LIMIT $page_1,4  ";
+                $query = "SELECT * FROM posts ";
                 $select_all_post= mysqli_query($connection,$query);
                 while($row = mysqli_fetch_assoc($select_all_post)){
                     $post_id  = $row['post_id'];
