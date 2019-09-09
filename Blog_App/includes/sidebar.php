@@ -41,10 +41,10 @@
                     <h4>LogIn</h4>
                     <form action="includes/login.php" method="post" > 
                         <div class="form-group">
-                        <input type="text" class="form-control" name="username" placeholder="Enter username">
+                        <input type="text" class="form-control" name="username" placeholder="user">
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" name="password" placeholder="Enter password"><br>
+                            <input type="password" class="form-control" name="password" placeholder="root"><br>
                             <span class="input-group-btn">
                                 <button class="btn btn-primary" name="login" type="submit">Login</button>
                             </span>
