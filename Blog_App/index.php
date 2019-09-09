@@ -3,11 +3,18 @@
 <?php include 'includes/header.php' ?>
 <?php include 'includes/navigation.php' ?>
 
+
+
+
+
+    <!-- Page Content -->
     <div class="container">
 
         <div class="row">
 
+            <!-- Blog Entries Column -->
             <div class="col-md-8">
+                  <!-- //PAGINATION LOGIC -->
 
                 <?php 
                 if(isset($_GET['page'])){
@@ -33,13 +40,14 @@
                 $select_all_post= mysqli_query($connection,$query);
                 while($row = mysqli_fetch_assoc($select_all_post)){
                     $post_id  = $row['post_id'];
-                    $post_title = $row['post_title'];
+                    $post_title = $row['post_title'];//here post title is coming from db
                     $post_author = $row['post_author'];
                     $post_date = $row['post_date'];
-                    $post_content = substr($row['content'],0,200); 
+                    $post_content = substr($row['content'],0,50); 
                     $post_tag = $row['post_tags'];
                     $post_image = $row['post_image'];
                     $post_status=$row['post_status'];
+                    //POST DISPLAY LOGIC GOES HERE
                     if($post_status!=='published'){
                         echo "no post to display";
                     }
@@ -47,10 +55,17 @@
 
                     
                     ?>
+
                 <h1 class="page-header">
-                         <a href="post.php?p_id=<?php echo $post_id?>"><?php echo $post_title?></a>
-                    <small>The Aswesome Assam</small>
+                        Page Heading
+                    <small>Secondary Text</small>
                 </h1>
+
+                <!-- First Blog Post -->
+                <h2>
+                    <!-- TO SHOW THE PARTICULAR POST WHEN CLICK ITS TITLE -->
+                    <a href="post.php?p_id=<?php echo $post_id?>"><?php echo $post_title?></a>
+                </h2>
                 <p class="lead">
                     by <a href="index.php"><?php echo $post_author ?> </a>
                 </p>
@@ -67,8 +82,13 @@
                 <?php
                    } }
                  ?>
+
+                
+
+                <!-- Pager -->
                 <ul class="pager">
                     <li >
+                    <!-- //PAGINATION LOGIC -->
                     <?php 
                     for($i=1;$i<=$count; $i++){
                         if($i==$page ){
@@ -76,11 +96,19 @@
                         }
                         else{
                             echo "<a href='index.php?page=$i'> $i  </a>";
-                        }                       
+                        }
+                       
                     }
 
                      ?>
                      </li>
+                    
+                    <!-- <li >
+                        <a href="#"> 1  </a>
+                    </li>
+                    <li >
+                        <a href="#">2</a>
+                    </li> -->
                 </ul>
 
             </div>
@@ -88,6 +116,7 @@
              <?php include 'includes/sidebar.php' ?>
 
                     </div>
+        <!-- /.row -->
         <hr>
  <?php include 'includes/footer.php' ?>
 
