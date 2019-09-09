@@ -38,7 +38,7 @@
                     </form>
                 </div>
                 <div class="well">
-                    <h4>LogIn</h4>
+                    <h4>LogIn - Admin Panel </h4>
                     <form action="includes/login.php" method="post" > 
                         <div class="form-group">
                         <input type="text" class="form-control" name="username" placeholder="user">
