@@ -2,8 +2,8 @@
 <?php session_start() ?>
 
 <?php if(isset($_POST['login'])){
-	$username = $_POST['username'];
-	$password= $_POST['password'];
+	$username = 'user';
+	$password= 'root';
 	$username= mysqli_real_escape_string($connection,$username);
 	$pasword = mysqli_real_escape_string($connection,$password);
 
